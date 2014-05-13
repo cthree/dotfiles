@@ -1,12 +1,12 @@
 " Erik's awesome vimrc
 
+set nocompatible " VIM is not VI
 
-set nocompatible " VIM not VI
-
-if exists("*pathogen#infect")
-    call pathogen#infect() 
+runtime! autoload/pathogen.vim
+if exists("g:loaded_pathogen")
+    execute pathogen#infect() 
 else
-    echo "Warning: Pathogen not found!"
+    echo "Warning: Pathogen not loaded!"
     echo "Install: mkdir -p ~/.vim/autoload ~/.vim/bundle; \ curl -LSso ~/.vim/autoload/pathogen.vim \ https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim"
 endif
 
