@@ -14,7 +14,6 @@ export MANPATH=/usr/local/man:$MANPATH
 
 # Use vi(m) as visual editor
 export VISUAL=vim
-#export EDITOR="/usr/local/bin/mate -w"
 
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
@@ -23,8 +22,8 @@ export PATH=/usr/local/mysql/bin:$PATH
 export MANPATH=/usr/local/mysql/man:$MANPATH
 
 # Command completion
-. ~/.bash_completion
 . ~/.git_completion
+. ~/.svn_completion
 
 # Command prompt c/w [Git branch] if pwd is a repo
 export PS1='\u@\h:\W$(__git_ps1 " [%s]") \$ '
