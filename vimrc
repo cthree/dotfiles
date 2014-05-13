@@ -3,7 +3,12 @@
 
 set nocompatible " VIM not VI
 
-execute pathogen#infect() 
+if exists("*pathogen#infect")
+    call pathogen#infect() 
+else
+    echo "Warning: Pathogen not found!"
+    echo "Install: mkdir -p ~/.vim/autoload ~/.vim/bundle; \ curl -LSso ~/.vim/autoload/pathogen.vim \ https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim"
+endif
 
 syntax on
 filetype plugin indent on

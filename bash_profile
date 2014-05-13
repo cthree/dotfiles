@@ -1,4 +1,4 @@
-# Load the default .profile
+# Load the default .profile if there is one
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" 
 
 # Set language to en with UTF-8 encoding to support filenames with non-ascii
@@ -15,7 +15,8 @@ export MANPATH=/usr/local/man:$MANPATH
 # Use vi(m) as visual editor
 export VISUAL=vim
 
-export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+#export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+
 
 # MySQL from mysql.com
 export PATH=/usr/local/mysql/bin:$PATH
@@ -41,3 +42,6 @@ alias ll="ls -lh"
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+
+# Load the local bash_profile
+[[ -s "$HOME/.bash_profile.local" ]] && source "$HOME/.bash_profile.local"
