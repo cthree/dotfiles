@@ -21,9 +21,9 @@ export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export PATH=/usr/local/mysql/bin:$PATH
 export MANPATH=/usr/local/mysql/man:$MANPATH
 
-# Command completion
-. ~/.git_completion
-. ~/.svn_completion
+# Version control helper stuff
+[[ -s "$HOME/dotfiles/git_completion" ]] && source "$HOME/dotfiles/git_completion"
+[[ -s "$HOME/dotfiles/svn_completion" ]] && source "$HOME/dotfiles/svn_completion"
 
 # Command prompt c/w [Git branch] if pwd is a repo
 export PS1='\u@\h:\W$(__git_ps1 " [%s]") \$ '
