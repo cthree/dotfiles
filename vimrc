@@ -1,6 +1,6 @@
 " Erik's awesome vimrc
 
-set nocompatible " VIM is not VI
+set nocompatible " VIM not VI
 
 runtime! autoload/pathogen.vim
 if exists("g:loaded_pathogen")
@@ -15,8 +15,8 @@ filetype plugin indent on
 scriptencoding utf-8
 
 set cursorline
-hi cursorline guibg=#333333
-hi CursorColumn guibg=#333333
+" hi cursorline guibg=#333333
+" hi CursorColumn guibg=#333333
 
 " Backup and undo
 set backup
