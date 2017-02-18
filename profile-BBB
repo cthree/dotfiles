@@ -1,5 +1,4 @@
-export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-
+# BeagleBone Black PIN and SLOT maps for GPIO
 export PINS=/sys/kernel/debug/pinctrl/44e10800.pinmux/pins
-CAPEMGRID=`ls -d /sys/devices/bone_capemgr.*`
+CAPEMGRID=$(ls -d /sys/devices/bone_capemgr.*)
 export SLOTS=$CAPEMGRID/slots

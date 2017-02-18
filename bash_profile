@@ -1,47 +1,64 @@
-# Load the default .profile if there is one
+#
+# cthree's most excellent interactive bash shell profile
+#
+
+DOTFILES="$HOME/dotfiles"
+[[ -s "$DOTFILES/dotfiles.inc.sh" ]] && source "$DOTFILES/dotfiles.inc.sh"
+
+# Load .profile first (if there is one)
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" 
 
-# Set language to en with UTF-8 encoding to support filenames with non-ascii
+# Set language to en_US with UTF-8 encoding to support filenames with non-ascii
 # characters
 export LC_CTYPE=en_US.UTF-8
 
-# colorize ls
+# colorize ls output
 export CLICOLOR=1
 
 # local binaries path
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export MANPATH=/usr/local/man:$MANPATH
 
-# Use vi(m) as visual editor
+# use neovim if it is installed
+if command_exists nvim ; then
+  alias vim="nvim"
+  alias vi="nvim"
+fi
+
 export VISUAL=vim
 
-#export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+# Set default shell command prompt
+PROMPT="${CYN}\u${NRM}@${BLU}\h${NRM}:\W"
+export PS1=$PROMPT
 
+# Load git command completion 
+[[ -s "$DOTFILES/git-completion.bash" ]] && source "$DOTFILES/git-completion.bash"
 
-# MySQL from mysql.com
-export PATH=/usr/local/mysql/bin:$PATH
-export MANPATH=/usr/local/mysql/man:$MANPATH
+# Configure git aware shell prompt
+GITPROMPT="$DOTFILES/git-prompt.sh"
+if [[ -s "$GITPROMPT" ]] ; then
+  source "$DOTFILES/git-prompt.sh"
+  export GIT_PS1_SHOWDIRTYSTATE=true
+  export GIT_PS1_STATESEPARATOR="|"
+  export GIT_PS1_SHOWUNTRACKEDFILES=true
+  export GIT_PS1_SHOWCOLORHINTS=true
+  export PROMPT_COMMAND='__git_ps1 "${PROMPT}" " \$ "'
+fi
 
-# Version control helper stuff
-[[ -s "$HOME/dotfiles/git_completion" ]] && source "$HOME/dotfiles/git_completion"
-[[ -s "$HOME/dotfiles/svn_completion" ]] && source "$HOME/dotfiles/svn_completion"
-
-# Command prompt c/w [Git branch] if pwd is a repo
-export PS1='\u@\h:\W$(__git_ps1 " [%s]") \$ '
-
-# Git command aliases
+# some git command shortcuts
 alias gst="git status"
-alias gci="git commit -v"
+alias gls="git status --short"
+alias gci="git commit -v -m"
 alias gco="git checkout"
 alias gbr="git branch --color"
 alias gadd="git add"
 
-# ls shortcuts
-alias l="ls -h"
-alias ll="ls -lh"
+# brew install bash-completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+# rbenv
+eval "$(rbenv init -)"
 
-# Load the local bash_profile
+# Load the local-machine-specific bash_profile addendum last
 [[ -s "$HOME/.bash_profile.local" ]] && source "$HOME/.bash_profile.local"
+
