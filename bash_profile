@@ -13,7 +13,7 @@ DOTFILES="$HOME/dotfiles"
 export LC_CTYPE=en_US.UTF-8
 
 # colorize ls output
-export CLICOLOR=1
+export CLICOLOR=$HAS_COLOR
 
 # local binaries path
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:$PATH
@@ -29,7 +29,7 @@ export VISUAL=vim
 
 # Set default shell command prompt
 PROMPT="${CYN}\u${NRM}@${BLU}\h${NRM}:\W"
-export PS1=$PROMPT
+export PS1="${PROMPT} \$ "
 
 # Load git command completion 
 [[ -s "$DOTFILES/git-completion.bash" ]] && source "$DOTFILES/git-completion.bash"
@@ -41,7 +41,7 @@ if [[ -s "$GITPROMPT" ]] ; then
   export GIT_PS1_SHOWDIRTYSTATE=true
   export GIT_PS1_STATESEPARATOR="|"
   export GIT_PS1_SHOWUNTRACKEDFILES=true
-  export GIT_PS1_SHOWCOLORHINTS=true
+  export GIT_PS1_SHOWCOLORHINTS=$HAS_COLOR
   export PROMPT_COMMAND='__git_ps1 "${PROMPT}" " \$ "'
 fi
 
