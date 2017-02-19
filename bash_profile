@@ -29,7 +29,7 @@ export VISUAL=vim
 
 # Set default shell command prompt
 PROMPT="${CYN}\u${NRM}@${BLU}\h${NRM}:\W"
-export PS1="${PROMPT} \$ "
+PS1="${PROMPT} \$ "
 
 # Load git command completion 
 [[ -s "$DOTFILES/git-completion.bash" ]] && source "$DOTFILES/git-completion.bash"
@@ -38,12 +38,12 @@ export PS1="${PROMPT} \$ "
 GITPROMPT="$DOTFILES/git-prompt.sh"
 if [[ -s "$GITPROMPT" ]] ; then
   source "$DOTFILES/git-prompt.sh"
-  export GIT_PS1_SHOWDIRTYSTATE=true
-  export GIT_PS1_SHOWUPSTREAM="auto"
-  export GIT_PS1_STATESEPARATOR="|"
-  export GIT_PS1_SHOWUNTRACKEDFILES=true
-  export GIT_PS1_SHOWCOLORHINTS=$HAS_COLOR
-  export PROMPT_COMMAND='__git_ps1 "${PROMPT}" " \$ "'
+  GIT_PS1_SHOWDIRTYSTATE=true
+  GIT_PS1_SHOWUPSTREAM="auto"
+  GIT_PS1_STATESEPARATOR="|"
+  GIT_PS1_SHOWUNTRACKEDFILES=true
+  GIT_PS1_SHOWCOLORHINTS=$HAS_COLOR
+  PROMPT_COMMAND='__git_ps1 "${PROMPT}" " \$ "'
 fi
 
 # some git command shortcuts
