@@ -74,7 +74,7 @@ alias gadd="git add"
 
 # brew install bash-completion on mac
 if ! shopt -oq posix; then
-  if [ -f /usr/local/etc/bash_completion ];
+  if [ -f /usr/local/etc/bash_completion ]; then
     . /usr/local/etc/bash_completion
   elif [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
