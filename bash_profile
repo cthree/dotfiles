@@ -14,8 +14,10 @@ export LC_CTYPE=en_US.UTF-8
 
 # colorize ls output
 export CLICOLOR=$HAS_COLOR
-if $HAS_COLOR; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+if [[ $HAS_COLOR ]]; then
+  if command_exists dircolors; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)" 
+  fi
   alias ls="ls --color=auto"
   alias grep="grep --color=auto"
   alias fgrep="grep --color=auto"
