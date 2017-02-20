@@ -72,11 +72,21 @@ alias gco="git checkout"
 alias gbr="git branch --color"
 alias gadd="git add"
 
-# brew install bash-completion
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+# brew install bash-completion on mac
+if ! shopt -oq posix; then
+  if [ -f /usr/local/etc/bash_completion ];
+    . /usr/local/etc/bash_completion
+  elif [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
 
-# rbenv
-eval "$(rbenv init -)"
+# initialize rbenv if installed
+if command_exists rbenv; then
+  eval "$(rbenv init -)"
+fi
 
 # Load the local-machine-specific bash_profile addendum last
 [[ -s "$HOME/.bash_profile.local" ]] && source "$HOME/.bash_profile.local"
