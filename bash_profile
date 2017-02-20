@@ -14,6 +14,14 @@ export LC_CTYPE=en_US.UTF-8
 
 # colorize ls output
 export CLICOLOR=$HAS_COLOR
+if $HAS_COLOR; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls="ls --color=auto"
+  alias grep="grep --color=auto"
+  alias fgrep="grep --color=auto"
+  alias egrep="grep --color=auto"
+  export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+fi
 
 # Ignore duplicate lines and lines starting with space in history file
 HISTCONTOL=ignoreboth
@@ -71,6 +79,11 @@ alias gci="git commit -v -m"
 alias gco="git checkout"
 alias gbr="git branch --color"
 alias gadd="git add"
+
+# Load other account specific aliases from another file
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # brew install bash-completion on mac
 if ! shopt -oq posix; then
