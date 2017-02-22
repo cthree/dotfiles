@@ -11,7 +11,6 @@ printf "This script is untested. ${RED}Check it first${NRM} before running\n"
 printf "to be sure you really want to do this!\n"
 exit 1
 
-SYSTYPE=$(uname -a | awk '{print $1}')
 if [ SYSTYPE = "Linux" ] ; then
   if [ -f "/etc/issue" -a $(cat "/etc/issue" | awk '{print $1}') = "Ubuntu" ]
      # Install neovim

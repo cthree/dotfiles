@@ -23,3 +23,6 @@ else
   # No colors
   HAS_COLOR=
 fi
+
+# Either Linux or Darwin or ...
+export SYSTYPE=$(uname -a | awk '{print $1}')
