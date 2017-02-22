@@ -18,7 +18,13 @@ if [[ $HAS_COLOR ]]; then
   if command_exists dircolors; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)" 
   fi
-  alias ls="ls --color=auto"
+
+  # BSD ls doesn't support --color= option so make sure ours does
+  # before creating an alias using it
+  ls --color=auto 2> /dev/null
+  if [ $? = 0 ] ; then
+    alias ls="ls --color=auto"
+  fi
   alias grep="grep --color=auto"
   alias fgrep="grep --color=auto"
   alias egrep="grep --color=auto"
