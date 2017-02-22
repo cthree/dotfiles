@@ -31,12 +31,13 @@ if [ SYSTYPE = "Linux" ] ; then
     sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
   fi
 elif [ SYSTYPE = "Darwin" ] ; then
+  brew update
+
   # Install neovim
   brew install neovim/neovim/neovim
-  
-  # Install pythons
-  brew install pip3
-  brew install pip2
+
+  sudo easy_install pip
+  brew install python3
 else
   echo "Don't know how to install on this system" && exit -1
 fi
@@ -60,9 +61,11 @@ mv $BACKUP_OPTS ~/.bashrc ~/bashrc.orig 2> /dev/null
 mv $BACKUP_OPTS ~/.bash_profile ~/bash_profile.orig 2> /dev/null
 ln -s $DOTFILES/bash_profile ~/.bash_profile
 
-mv $BACKUP_OPTS ~/.config ~/config.orig 2> /dev/null
+mkdir -p ~/.config
+mv $BACKUP_OPTS ~/.config/nvim ~/.config/nvim.orig 2> /dev/null
 mv $BACKUP_OPTS ~/.vimrc ~/vimrc.orig 2> /dev/null
-ln -s $DOTFILES/config ~/.config
+mv $BACKUP_OPTS ~/.vim ~/vim.orig 2> /dev/null
+ln -s $DOTFILES/config/nvim ~/.config/nvim
 
 # Install the vim plugins and exit
 nvim -c PlugInstall -c q -c q
