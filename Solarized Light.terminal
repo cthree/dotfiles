@@ -137,17 +137,25 @@
 	aXZlctEXGFRyb290gAEIERojLTI3O0FITltijY+RlqGqsrW+0NPYAAAAAAAAAQEAAAAA
 	AAAAGQAAAAAAAAAAAAAAAAAAANo=
 	</data>
+	<key>BackgroundAlphaInactive</key>
+	<real>0.70127232142857143</real>
+	<key>BackgroundBlur</key>
+	<real>0.0</real>
+	<key>BackgroundBlurInactive</key>
+	<real>0.68299107440880369</real>
 	<key>BackgroundColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPECww
-	Ljk4OTQzNDE4MjYgMC45NTc5NDM5MTYzIDAuODY0MDU5ODA1OSAwLjk2ABABgALSEBES
-	E1okY2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9OU0tleWVk
-	QXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE5bYpGTlZqlrra5wtTX3AAAAAAAAAEB
-	AAAAAAAAABkAAAAAAAAAAAAAAAAAAADe
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPECcw
+	Ljk4OTQzNDE4MjYgMC45NTc5NDM5MTYzIDAuODY0MDU5ODA1OQAQAYAC0hAREhNaJGNs
+	YXNzbmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hp
+	dmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2KMjpCVoKmxtL3P0tcAAAAAAAABAQAAAAAA
+	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
+	<key>BackgroundSettingsForInactiveWindows</key>
+	<true/>
 	<key>BlinkText</key>
-	<false/>
+	<true/>
 	<key>CommandString</key>
 	<string></string>
 	<key>CursorBlink</key>
@@ -167,15 +175,17 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AqAAAAAAAAEBCAAoADXxATQ291c2luZUZvclBvd2VybGluZdITFBUWWiRjbGFz
-	c25hbWVYJGNsYXNzZXNWTlNGb250ohUXWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy
-	0RobVHJvb3SAAQgRGiMtMjc8QktSW2JpcnR2eI6TnqeusbrMz9QAAAAAAAABAQAAAAAA
-	AAAcAAAAAAAAAAAAAAAAAAAA1g==
+	YXNzI0AsAAAAAAAAEBCAAoADXxAQRmlyYUNvZGUtUmVndWxhctITFBUWWiRjbGFzc25h
+	bWVYJGNsYXNzZXNWTlNGb250ohUXWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy0Rob
+	VHJvb3SAAQgRGiMtMjc8QktSW2JpcnR2eIuQm6SrrrfJzNEAAAAAAAABAQAAAAAAAAAc
+	AAAAAAAAAAAAAAAAAAAA0w==
 	</data>
 	<key>FontAntialias</key>
 	<true/>
+	<key>FontHeightSpacing</key>
+	<real>1</real>
 	<key>FontWidthSpacing</key>
-	<real>1.004032258064516</real>
+	<real>1</real>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0499999999999998</real>
 	<key>RunCommandAsShell</key>
@@ -262,7 +272,7 @@
 	ZmZmg1MTpj6DeHnQPoPQg+A+AYY=
 	</data>
 	<key>columnCount</key>
-	<integer>94</integer>
+	<integer>132</integer>
 	<key>cyanColour</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
@@ -286,7 +296,7 @@
 	ZmZmg6i7UT+DUATePYMl2hA+AYY=
 	</data>
 	<key>rowCount</key>
-	<integer>38</integer>
+	<integer>48</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>

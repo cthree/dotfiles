@@ -1,0 +1,125 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-11727-65459-1fhcoeo/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-11727-65459-1fhcoeo/package.tgz",
+        "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-11727-65459-1fhcoeo/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-11727-65459-1ro1ryt"
+    ]
+  ],
+  "_from": "../d-11727-65459-1fhcoeo/package.tgz",
+  "_id": "linter-elixirc@1.3.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/linter-elixirc",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-11727-65459-1fhcoeo/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-11727-65459-1fhcoeo/package.tgz",
+    "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-11727-65459-1fhcoeo/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11727-65459-1fhcoeo/package.tgz",
+  "_shasum": "061cb3cc9c43a1a4a1e0fdff3d6931c4f1df69aa",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-11727-65459-1fhcoeo/package.tgz",
+  "_where": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-11727-65459-1ro1ryt",
+  "bugs": {
+    "url": "https://github.com/AtomLinter/linter-elixirc/issues"
+  },
+  "configSchema": {
+    "elixircPath": {
+      "type": "string",
+      "title": "Elixirc path",
+      "default": "elixirc"
+    },
+    "mixPath": {
+      "type": "string",
+      "title": "Mix path",
+      "default": "mix"
+    },
+    "forceElixirc": {
+      "type": "boolean",
+      "title": "Always use elixirc",
+      "description": "Activating this will force the plugin to never use `mix compile` and always use `elixirc`.",
+      "default": false
+    },
+    "mixEnv": {
+      "type": "string",
+      "title": "Mix environment to use for linting",
+      "description": "Setting the Mix environment can avoid collisions between linter compiles and IEx sessions.",
+      "default": "dev"
+    }
+  },
+  "dependencies": {
+    "atom-linter": "^9.0.0",
+    "atom-package-deps": "^4.0.1",
+    "tmp": "^0.0.31"
+  },
+  "description": "Bare Minimum Elixir lint package",
+  "devDependencies": {
+    "eslint": "^3.13.0",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "engines": {
+    "atom": ">=1.4.0 <2.0.0"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "global-require": "off",
+      "import/no-unresolved": [
+        "error",
+        {
+          "ignore": [
+            "atom"
+          ]
+        }
+      ]
+    },
+    "globals": {
+      "atom": true
+    },
+    "env": {
+      "node": true,
+      "browser": true
+    }
+  },
+  "homepage": "https://github.com/AtomLinter/linter-elixirc#readme",
+  "license": "MIT",
+  "linter-package": true,
+  "main": "./lib/init",
+  "name": "linter-elixirc",
+  "optionalDependencies": {},
+  "package-deps": [
+    "linter",
+    "language-elixir"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  },
+  "readme": "# linter-elixirc\n\nThis linter plugin for [Linter][linter] provides an interface to elixirc/mix.\nIt will be used with files that have the \"source.elixir\" syntax\n(ie. `*.ex; *.exs`).\n\nThere are limitations with ElixirC that:\n\n-   In case of compilation error, it will only show first error\n-   It does not work with buffers, so linting on fly is disabled\n\n## Installation\n\nPlugin requires Linter package and it should install it by itself.\nIf it did not, please follow Linter instructions [here][linter].\n\n### Method 1: In console\n\n```ShellSession\n$ apm install linter-elixirc\n```\n\n### Method 2: In Atom\n\n1.  Edit > Preferences (Ctrl+,)\n2.  Install > Search \"linter-elixirc\" > Install\n\n## Settings\n\nPlugin should work with default settings. If not:\n\n1.  Edit > Preferences (Ctrl+,)\n\n2.  Packages > Search \"linter-elixirc\" > Settings\n\n3.  `elixirc path` option - use `which elixirc` to find path. ie.\n    `/usr/local/bin/elixirc`\n\n4.  `mix path` option - use `which mix` to find path. ie. `/usr/local/bin/mix`\n\n5.  `always use elixirc` option - leave it disabled, unless `mix compile` is too slow.\n\n6.  `mix env` option - Allows changing the Mix environment for lint runs. If using IEx at the same time as Atom this can be changed to allow IEx to pick up code changes.\n\n## Usage\n\nIf you open folder with mix project (`mix.exs` exists in project's root\nfolder), linter will use `mix compile` to include all dependencies, unless you\nenable \"Always use elixirc\" setting.\n\nIf you open single file, linter will use `elixirc`. This will try to find\ndependencies in a place where mix projects do (\\_build/dev/lib/\\*/ebin). If\ndependency path is different, then every external dependency will trigger\nCompileError.\n\nSince `*.ex` files are not compiled by `mix compile`, they are always linted\nusing `elixirc`.\n\n[linter]: https://github.com/AtomLinter/Linter \"Linter\"\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtomLinter/linter-elixirc.git"
+  },
+  "version": "1.3.0"
+}

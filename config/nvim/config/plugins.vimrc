@@ -36,7 +36,7 @@ autocmd! BufWritePost * Neomake
 let g:deoplete#enable_at_startup = 1
 
 let g:deoplete#sources = {}
-let g:deoplete#sources._ = [ 'buffer', 'ultisnips' ]
+let g:deoplete#sources._ = [ 'ultisnips', 'buffer' ]
 
 " Personal snippets location
 let g:UltiSnipsSnippetsDir = "~/dotfiles/config/nvim/UltiSnips"
@@ -45,7 +45,10 @@ let g:UltiSnipsSnippetsDir = "~/dotfiles/config/nvim/UltiSnips"
 " let g:UltiSnipsExpandTrigger = "<C-j>"
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+" Vim commentary needs some help with Elixir files
 autocmd FileType elixir setlocal commentstring=#\ %s
+" Ctrl-/ toggles line comments
+nmap <C-/> :Commentary<CR>
 
 " Open NERDTree when no file specified on launch
 autocmd StdinReadPre * let s:std_in=1

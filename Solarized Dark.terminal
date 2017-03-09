@@ -147,7 +147,7 @@
 	AAAAGQAAAAAAAAAAAAAAAAAAANo=
 	</data>
 	<key>BlinkText</key>
-	<false/>
+	<true/>
 	<key>CommandString</key>
 	<string></string>
 	<key>CursorBlink</key>
@@ -167,15 +167,15 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AqAAAAAAAAEBCAAoADXxATQ291c2luZUZvclBvd2VybGluZdITFBUWWiRjbGFz
-	c25hbWVYJGNsYXNzZXNWTlNGb250ohUXWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy
-	0RobVHJvb3SAAQgRGiMtMjc8QktSW2JpcnR2eI6TnqeusbrMz9QAAAAAAAABAQAAAAAA
-	AAAcAAAAAAAAAAAAAAAAAAAA1g==
+	YXNzI0AsAAAAAAAAEBCAAoADXxAQRmlyYUNvZGUtUmVndWxhctITFBUWWiRjbGFzc25h
+	bWVYJGNsYXNzZXNWTlNGb250ohUXWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy0Rob
+	VHJvb3SAAQgRGiMtMjc8QktSW2JpcnR2eIuQm6SrrrfJzNEAAAAAAAABAQAAAAAAAAAc
+	AAAAAAAAAAAAAAAAAAAA0w==
 	</data>
 	<key>FontAntialias</key>
 	<true/>
 	<key>FontWidthSpacing</key>
-	<real>1.004032258064516</real>
+	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0499999999999998</real>
 	<key>RunCommandAsShell</key>

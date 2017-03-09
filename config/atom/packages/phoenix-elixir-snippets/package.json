@@ -1,0 +1,72 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117127-9815-qck4ln/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117127-9815-qck4ln/package.tgz",
+        "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117127-9815-qck4ln/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-117127-9815-gdo6ck"
+    ]
+  ],
+  "_from": "../d-117127-9815-qck4ln/package.tgz",
+  "_id": "phoenix-elixir-snippets@0.4.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/phoenix-elixir-snippets",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117127-9815-qck4ln/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117127-9815-qck4ln/package.tgz",
+    "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117127-9815-qck4ln/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-117127-9815-qck4ln/package.tgz",
+  "_shasum": "4fad339c041b901911ee6ec1f25f33495465799d",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117127-9815-qck4ln/package.tgz",
+  "_where": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-117127-9815-gdo6ck",
+  "author": {
+    "name": "techgaun"
+  },
+  "bugs": {
+    "url": "https://github.com/techgaun/phoenix-snippets/issues"
+  },
+  "dependencies": {},
+  "description": "Snippets for phoenix and elixir",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">= 0.210.0"
+  },
+  "homepage": "https://github.com/techgaun/phoenix-snippets#readme",
+  "keywords": [
+    "atom",
+    "phoenix",
+    "elixir",
+    "snippets",
+    "erlang"
+  ],
+  "license": "Apache-2.0",
+  "name": "phoenix-elixir-snippets",
+  "optionalDependencies": {},
+  "readme": "# phoenix-snippets\nPhoenix framework snippets I use with atom.io editor\n\n## Usage\n\nThis is nothing fancy but something that I use to speed up my work and reduce the amount of typing I do whenever I work with elixir. You can just go through the [snippet file](snippets/phoenix-elixir-snippets.cson) to get to know more about the snippets.\n\n![Phoenix Elixir Snippets](/images/phoenix-elixir-snippet.gif?raw=true)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techgaun/phoenix-snippets.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.4.0"
+}

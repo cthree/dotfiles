@@ -1,0 +1,504 @@
+@import "ui-variables";
+@import "pv-variables";
+
+
+li[is="tabs-tab"][data-type="project-viewer-editor"] {
+  &:before {
+    background-color: @project-viewer_item_color;
+  }
+}
+
+project-viewer-editor {
+  background-color: @tab-background-color;
+  padding: @component-padding * 4 0;
+
+  .panel-head {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .panel-body {
+    margin: 0 auto;
+    height: 100%;
+    overflow: scroll;
+    padding: 0 10% 32px 10%;
+  }
+
+  .pv-editor-header::before {
+    content: '';
+    border: 2px solid @project-viewer_item_color;
+    margin-right: @component-padding;
+  }
+
+  .pv-editor-block {
+    padding-bottom: @component-padding * 2;
+
+    &.hidden {
+      display: none;
+    }
+
+    .list-tree.groups-list {
+      position: relative;
+    }
+
+    .list-item {
+      padding-left: @component-padding * 2;
+    }
+  }
+
+  input,
+  .btn {
+    margin-bottom: @component-padding / 2;
+    margin-right: @component-padding / 2;
+  }
+
+  .input-color {
+    border: none;
+    cursor: pointer;
+    transition: opacity @pv_transition-duration-default;
+
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: 0.1;
+    }
+  }
+
+  .input-select {
+    cursor: pointer;
+  }
+
+  .input-checkbox {
+    cursor: pointer;
+  }
+
+  .pv-color-palette {
+    display: inline-block;
+    margin-left: @component-padding * 2;
+    margin-bottom: @component-padding;
+    vertical-align: middle;
+    transition: opacity @pv_transition-duration-default;
+
+    &[hidden] {
+      opacity: 0.1;
+
+        .pv-palette {
+          cursor: not-allowed;
+        }
+    }
+  }
+
+  .pv-palette-info {
+    margin-bottom: 2px;
+  }
+
+  .pv-path-remove {
+    cursor: pointer;
+  }
+
+  .pv-palette {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    margin: 0 2px;
+    cursor: pointer;
+  }
+
+  .input-label {
+    cursor: pointer;
+    display: block;
+    width: -webkit-max-content;
+    margin: 0 1em 1em 0;
+
+    &.inliner {
+      display: inline-block;
+    }
+  }
+
+  .list-group {
+    padding-top: @component-padding;
+  }
+
+  .icons-list {
+    margin-top: @component-padding;
+    height: 200px;
+    overflow: scroll;
+    padding: @component-padding / 2;
+    background-color: @tool-panel-background-color;
+    position: relative;
+    flex: 1 1 300px;
+    min-width: 0;
+    border: 1px solid @tool-panel-border-color;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    &.only-icons {
+      .icon, .devicons {
+        flex: 0 0 32px;
+        height: 32px;
+        margin: 3px;
+        text-align: center;
+        padding: 0;
+
+        &:before{
+          margin: 0;
+          font-size: 32px;
+          width: 32px;
+          height: 32px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .icon, .devicons {
+      cursor: pointer;
+      flex: 1 0 200px;
+      padding: @component-padding/2 @component-padding;
+      transition: all @pv_transition-duration-default;
+
+      &:hover:not(.highlight-success) {
+        color: @text-color-highlight;
+        background-color: @button-background-color-hover;
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+
+  .list-tree {
+    .list-nested-item {
+      -webkit-user-select: none;
+      pointer-events: none;
+
+      .list-item {
+        pointer-events: all;
+        cursor: pointer;
+        transition: color @pv_transition-duration-default ease-in 0s;
+
+        &:hover {
+          color: @project-viewer_item_color;
+        }
+      }
+
+      .list-tree {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.pv-has-icons {
+  @import (inline) "./../node_modules/devicons/css/devicons.css";
+
+  .devicons {
+    font-family: @font-family;
+    font-size: @font-size;
+    display: inline-block;
+    text-align: left;
+    top: 0;
+
+    &:before {
+      font-family: 'devicons';
+      font-size: 16px;
+      margin-right: 5px;
+      vertical-align: middle;
+      height: inherit;
+    }
+  }
+
+  .list-group .primary-line.devicons {
+    display: block;
+    text-align: left;
+  }
+}
+
+project-viewer {
+
+  .devicons:before {
+    font-family: 'devicons';
+    font-size: @component-icon-size;
+    margin-right: @component-padding / 2;
+    vertical-align: middle;
+    height: inherit;
+  }
+
+  -webkit-user-select: none;
+  font-size: @font-size;
+  font-family: @font-family;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.5s;
+  width: @project-viewer_main_width-max;
+  overflow: hidden;
+
+  &.resizing {
+    transition: none;
+  }
+
+  .heading {
+    color: @project-viewer_item_color;
+    padding-left: @component-padding;
+    white-space: nowrap;
+
+    &.hidden {
+      visibility: hidden;
+    }
+  }
+
+  &.autohide {
+    width: @project-viewer_main_width-min;
+
+    .hidden-block {
+      opacity: 0;
+    }
+
+    &:hover {
+      width: @project-viewer_main_width-max;
+
+      .hidden-block {
+        opacity: 1;
+      }
+    }
+  }
+
+  .hidden-block {
+    background-color: @tool-panel-background-color;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transition: opacity 0.5s;
+    overflow: hidden;
+  }
+
+  .body-content {
+    overflow: scroll;
+    height: calc(~"100% - 50px");
+    width: 100%;
+    flex-grow: 1;
+    position: absolute;
+  }
+
+  > .list-tree {
+    position: relative;
+    padding: @component-padding @component-padding/2;
+  }
+
+  .background-message {
+    transition: opacity @pv_transition-duration-default;
+
+    &.hidden {
+      opacity: 0;
+    }
+  }
+
+  .has-collapsable-children {
+    margin-left: 10px;
+  }
+
+  li[is="project-viewer-group"] {
+
+      &.above {
+        > .list-item {
+            color: @project-viewer_item_color;
+
+            &::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                height: @component-line-height / 2;
+                width: @component-line-height / 3;
+                border-color: @project-viewer_item_color;
+                border-style: solid;
+                border-width: thin;
+                border-bottom: transparent;
+                border-right: transparent;
+            }
+        }
+      }
+
+      &.below {
+
+        > .list-item {
+            color: @project-viewer_item_color;
+
+            &::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                height: @component-line-height / 2;
+                width: @component-line-height / 3;
+                margin-top: @component-line-height / 2;
+                border-color: @project-viewer_item_color;
+                border-style: solid;
+                border-width: thin;
+                border-top: transparent;
+                border-right: transparent;
+            }
+        }
+      }
+
+      &.center {
+        > .list-item {
+            color: @project-viewer_item_color;
+
+            &::after {
+              position: absolute;
+              content: "";
+              left: 0;
+              height: @component-line-height / 2;
+              margin-top: @component-line-height / 3;
+              border-color: @project-viewer_item_color;
+              border-style: solid;
+              border-width: thin;
+              border-top: transparent;
+              border-right: transparent;
+              border-bottom: transparent;
+            }
+        }
+      }
+  }
+
+  li[is="project-viewer-group"].list-nested-item,
+  li[is="project-viewer-project"].list-item {
+    transition: opacity @pv_transition-duration-default;
+
+    &.dragged {
+      opacity: 0.5;
+
+      > .list-item {
+        color: @project-viewer_item_color_dragged !important;
+      }
+
+      .list-tree {
+        display: none;
+      }
+    }
+
+    &:not(.selected)::before {
+      position: absolute;
+      left: 0;
+      height: @component-line-height;
+      content: "";
+      width: 2px;
+      background-color: @project-viewer_item_background-color;
+      visibility: hidden;
+      transform: scaleY(0);
+      color: @project-viewer_item_color;
+      transition: transform @pv_transition-duration-default, visibility @pv_transition-duration-default;
+      padding-left: 0;
+    }
+
+    &.active {
+      color: @project-viewer_item_color;
+
+      > .list-item {
+        color: @project-viewer_item_color;
+      }
+
+      &:not(.selected):not(.no-paths)::before {
+        visibility: visible !important;
+        transform: scaleY(1) !important;
+      }
+    }
+  }
+
+  li[is="project-viewer-group"].list-nested-item {
+    -webkit-user-drag: element;
+    pointer-events: none;
+    transition: color @pv_transition-duration-default ease-in 0s;
+
+    > .list-item {
+      pointer-events: all;
+      cursor: pointer;
+
+      &:hover {
+        color: @project-viewer_item_color;
+      }
+    }
+
+    .list-tree {
+      pointer-events: none;
+    }
+  }
+
+  li[is="project-viewer-project"].list-item {
+    -webkit-user-drag: element;
+    -webkit-user-select: none;
+    cursor: pointer;
+    transition: color @pv_transition-duration-default ease-in 0s, background-color @pv_transition-duration-default ease-in 0s, padding @pv_transition-duration-fast ease-in 0s;
+    pointer-events: all;
+
+    &.no-paths,
+    &.no-paths span {
+      text-decoration: line-through;
+      color: @text-color-subtle;
+      cursor: not-allowed;
+    }
+
+    &:not(.selected):not(.no-paths)::before {
+      position: absolute;
+      left: 0;
+      height: @component-line-height;
+      content: "";
+      width: 2px;
+      background-color: @project-viewer_item_background-color;
+      visibility: hidden;
+      transform: scaleY(0);
+      transition: transform @pv_transition-duration-default, visibility @pv_transition-duration-default;
+    }
+
+    &:not(.selected):not(.no-paths):hover {
+      color: @project-viewer_item_color;
+      padding-left: 0;
+    }
+
+    &:not(.dragging):not(.selected):hover::before {
+      visibility: visible;
+      transform: scaleY(1);
+    }
+
+    span {
+      pointer-events: none;
+    }
+
+    &.dropping {
+        padding-top: 0;
+        padding-bottom: 0;
+        color: @project-viewer_item_color;
+
+        &.above {
+            padding-top: 5px;
+            padding-bottom: 0;
+        }
+
+        &.below {
+          padding-top: 0;
+          padding-bottom: 5px;
+        }
+    }
+  }
+}
+
+.pv-resizer {
+  position: absolute;
+  cursor: ew-resize;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  display: block;
+  opacity: 1;
+  transition: background-color @pv_transition-duration-default;
+
+  &.invert {
+    right: 0;
+  }
+
+  &:hover {
+    opacity: 0.5;
+    background-color: @background-color-highlight;
+  }
+}

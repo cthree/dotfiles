@@ -1,0 +1,11 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Keybinding Cheatsheet'
+      'submenu': [
+        { 'label': 'Toggle', 'command': 'keybinding-cheatsheet:toggle' }
+      ]
+    ]
+  }
+]

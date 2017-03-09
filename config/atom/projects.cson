@@ -1,0 +1,14 @@
+[
+  {
+    title: "Jupiter"
+    paths: [
+      "/Users/erik/Projects/jupiter"
+    ]
+  },
+  {
+    title: "Jupiter-Forager"
+    paths: [
+      "/Users/erik/Projects/jupiter/apps/forager"
+    ]
+  }
+]

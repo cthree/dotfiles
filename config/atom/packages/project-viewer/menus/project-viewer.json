@@ -1,0 +1,65 @@
+{
+  "context-menu": {},
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Project Viewer",
+          "submenu": [
+            {
+              "label": "Toggle Panel",
+              "command": "project-viewer:togglePanel"
+            },
+            {
+              "label": "Open editor...",
+              "command": "project-viewer:openEditor"
+            },
+            {
+              "label": "Toggle Select View...",
+              "command": "project-viewer:toggleSelectList"
+            },
+            {"type": "separator"},
+            {
+              "label": "Import / Export...",
+              "submenu": [
+                {
+                  "label": "Import from a private gist",
+                  "command": "project-viewer:gistImport"
+                },
+                {
+                  "label": "Export to a private gist",
+                  "command": "project-viewer:gistExport"
+                },
+                {"type": "separator"},
+                {
+                  "label": "Import from Google Drive"
+                },
+                {
+                  "label": "Export to Google Drive"
+                }
+              ]
+            },
+            {
+              "label": "Utilities...",
+              "submenu": [
+                {
+                  "label": "Open database file",
+                  "command": "project-viewer:openDatabase"
+                },
+                {
+                  "label": "Convert from 0.3.x local database",
+                  "command": "project-viewer:migrate03x"
+                },
+                {
+                  "label": "Clear all projects stored states",
+                  "command": "project-viewer:clearStates"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

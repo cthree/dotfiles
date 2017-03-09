@@ -1,0 +1,25 @@
+@import "ui-variables";
+
+* {
+	box-sizing: border-box;
+}
+
+.workspace {
+  background-color: @app-background-color;
+}
+
+// props: https://github.com/soloman1124/atom-solo-dark-ui
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-corner {
+	background: @base3;
+}
+
+::-webkit-scrollbar-thumb {
+	background: @base2;
+	border-radius: 5px;
+	box-shadow: 0 0 1px grey inset;
+}

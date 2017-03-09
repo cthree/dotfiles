@@ -1,0 +1,60 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-85807-1bg890n/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-85807-1bg890n/package.tgz",
+        "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-85807-1bg890n/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-117126-85807-1ifg72f"
+    ]
+  ],
+  "_from": "../d-117126-85807-1bg890n/package.tgz",
+  "_id": "solarized-light-ui@0.1.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/solarized-light-ui",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-85807-1bg890n/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-85807-1bg890n/package.tgz",
+    "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-85807-1bg890n/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-117126-85807-1bg890n/package.tgz",
+  "_shasum": "b6876d9baf22cecaad69e3a8f36001af4bc39f4b",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-85807-1bg890n/package.tgz",
+  "_where": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-117126-85807-1ifg72f",
+  "bugs": {
+    "url": "https://github.com/pierreozoux/solarized-light-ui/issues"
+  },
+  "dependencies": {},
+  "description": "Solarized light UI theme for Atom",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/pierreozoux/solarized-light-ui#readme",
+  "license": "MIT",
+  "name": "solarized-light-ui",
+  "optionalDependencies": {},
+  "readme": "# Solarized Light UI theme\n\nBased on [Solarized Dark UI](https://github.com/Rnhmjoj/solarized-dark-ui) Atom theme.\n\n![screenshot](https://raw.github.com/pierreozoux/solarized-light-ui/master/screenshot.png)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pierreozoux/solarized-light-ui.git"
+  },
+  "theme": "ui",
+  "version": "0.1.0"
+}

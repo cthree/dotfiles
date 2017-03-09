@@ -1,0 +1,60 @@
+@import "ui-variables";
+
+.keybinding-cheatsheet {
+  color: @text-color;
+  display: flex;
+  flex-flow: column;
+  margin: 0px;
+  min-width: @font-size * 30;
+  padding: 5px;
+
+  .keybinding-panel-header {
+    padding-top: 5px;
+
+    h2 {
+      color: @text-color-highlight;
+      margin-top: 0px;
+    }
+
+    .keybinding-filter {
+      width: 100%;
+    }
+  }
+
+  .keybinding-panel-content {
+    margin-top: 5px;
+    overflow-y: scroll;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+
+    .keybinding-group-header {
+      color: @text-color-highlight;
+      &:first-child {
+        margin-top: 0px;
+      }
+    }
+
+    .keybinding-list {
+
+      .keybinding-group {
+        padding-bottom: 10px;
+
+        .keybinding {
+          padding-bottom: 3px;
+
+          .keybinding-keystrokes {
+            display: inline;
+            width: 40%;
+          }
+
+          .keybinding-command {
+            display: inline;
+            float: right;
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}

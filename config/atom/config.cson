@@ -1,0 +1,55 @@
+"*":
+  "autocomplete-elixir":
+    elixirPath: "/usr/local/bin"
+    erlangHome: "/usr/local/bin"
+  core:
+    disabledPackages: [
+      "welcome"
+      "project-viewer"
+      "linter-elixir-credo"
+      "phoenix-elixir-snippets"
+    ]
+    projectHome: "/Users/erik/Projects"
+    themes: [
+      "solarized-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    fontFamily: "FiraCode"
+    lineHeight: 1.4
+    scrollPastEnd: true
+    showIndentGuide: true
+    softWrapAtPreferredLineLength: true
+    softWrapHangingIndent: 2
+    tabType: "soft"
+  "exception-reporting":
+    userId: "4d047897-0624-4836-87eb-9f7499f4ae93"
+  figlet: {}
+  fonts:
+    fontFamily: "FiraCode"
+  linter: {}
+  "linter-elixirc":
+    mixEnv: "test"
+  "markdown-preview":
+    breakOnSingleNewline: true
+    useGitHubStyle: true
+  "markdown-preview-plus":
+    useGitHubStyle: true
+  minimap:
+    plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+  "minimap-git-diff":
+    useGutterDecoration: true
+  "project-manager":
+    includeGitRepositories: true
+  "project-viewer":
+    autoHide: true
+    disclaimer:
+      v109: false
+    hideHeader: true
+    statusBar: true
