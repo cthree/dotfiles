@@ -1,0 +1,41 @@
+{
+  "info": {
+    "version": "1.0.7",
+    "updated": "2017-03-11T20:26:51.201Z"
+  },
+  "root": [
+    {
+      "type": "project",
+      "name": "forager",
+      "icon": "icon-beaker",
+      "color": "",
+      "devMode": false,
+      "config": {},
+      "paths": [
+        "/Users/erik/Projects/jupiter/apps/forager"
+      ]
+    },
+    {
+      "type": "project",
+      "name": "robo_pussy",
+      "icon": "icon-clock",
+      "color": "",
+      "devMode": false,
+      "config": {},
+      "paths": [
+        "/Users/erik/Projects/robo_pussy"
+      ]
+    },
+    {
+      "type": "project",
+      "name": "blinky",
+      "icon": "icon-light-bulb",
+      "color": "",
+      "devMode": false,
+      "config": {},
+      "paths": [
+        "/Users/erik/Projects/blinky"
+      ]
+    }
+  ]
+}

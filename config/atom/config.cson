@@ -5,9 +5,10 @@
   core:
     disabledPackages: [
       "welcome"
-      "project-viewer"
       "linter-elixir-credo"
-      "phoenix-elixir-snippets"
+      "wrap-guide"
+      "package-generator"
+      "background-tips"
     ]
     projectHome: "/Users/erik/Projects"
     themes: [
@@ -53,3 +54,10 @@
       v109: false
     hideHeader: true
     statusBar: true
+  tabs:
+    addNewTabsAtEnd: true
+    enableVcsColoring: true
+  "tree-view":
+    hideIgnoredNames: true
+    sortFoldersBeforeFiles: false
+    squashDirectoryNames: true

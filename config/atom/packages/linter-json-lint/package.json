@@ -1,0 +1,79 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117210-18822-b2nyyk/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117210-18822-b2nyyk/package.tgz",
+        "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117210-18822-b2nyyk/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-117210-18822-2dkrmw"
+    ]
+  ],
+  "_from": "../d-117210-18822-b2nyyk/package.tgz",
+  "_id": "linter-json-lint@0.1.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/linter-json-lint",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117210-18822-b2nyyk/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117210-18822-b2nyyk/package.tgz",
+    "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117210-18822-b2nyyk/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-117210-18822-b2nyyk/package.tgz",
+  "_shasum": "27622f2e4dc82f449438a3d8d2dbd78928d9c5e8",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117210-18822-b2nyyk/package.tgz",
+  "_where": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-117210-18822-2dkrmw",
+  "bugs": {
+    "url": "https://github.com/josa42/atom-linter-json-lint/issues"
+  },
+  "dependencies": {
+    "atom-package-deps": "^4.0.1",
+    "json-lint": "^0.1.0 "
+  },
+  "description": "Lint `json` on the fly, using json-lint",
+  "devDependencies": {
+    "babel-eslint": "^4.1.5",
+    "eslint": "^2.1.0"
+  },
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/josa42/atom-linter-json-lint#readme",
+  "license": "MIT",
+  "main": "./lib/init",
+  "name": "linter-json-lint",
+  "optionalDependencies": {},
+  "package-deps": [
+    "linter"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  },
+  "readme": "# linter-json-lint\n\n[![Build Status](https://img.shields.io/travis/josa42/atom-linter-json-lint.svg?style=flat-square)](https://travis-ci.org/josa42/atom-linter-json-lint)\n[![Plugin installs!](https://img.shields.io/apm/dm/linter-json-lint.svg?style=flat-square)](https://atom.io/packages/linter-json-lint)\n[![Package version!](https://img.shields.io/apm/v/linter-json-lint.svg?style=flat-square)](https://atom.io/packages/linter-json-lint)\n[![Dependencies!](https://img.shields.io/david/josa42/atom-linter-json-lint.svg?style=flat-square)](https://david-dm.org/josa42/atom-linter-json-lint)\n\nThis linter plugin for [Linter](https://github.com/atom-community/linter) provides an interface to [json-lint](https://github.com/codenothing/jsonlint).\n\n## Configuration\n\n* **Allow Comments**\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josa42/atom-linter-json-lint.git"
+  },
+  "scripts": {
+    "lint": "eslint lib"
+  },
+  "version": "0.1.1"
+}

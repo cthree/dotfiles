@@ -31,12 +31,9 @@ if [ SYSTYPE = "Linux" ] ; then
   fi
 elif [ SYSTYPE = "Darwin" ] ; then
   brew update
-
-  # Install neovim
-  brew install neovim/neovim/neovim
+  brew bundle install
 
   sudo easy_install pip
-  brew install python3
 else
   echo "Don't know how to install on this system" && exit -1
 fi
@@ -68,6 +65,8 @@ ln -s $DOTFILES/config/nvim ~/.config/nvim
 
 # Install the vim plugins and exit
 nvim -c PlugInstall -c q -c q
+
+ln -s ~/.config/atom ~/.atom
 
 echo "All done!"
 

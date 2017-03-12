@@ -1,0 +1,26 @@
+@syntax-mix-base:       hsl(220, 100%, 66%);
+@syntax-mix-grey:       12%;
+@syntax-mix-color:      0%;
+
+@light-gray:      mix( @syntax-mix-base, hsl(0,0%,72%), @syntax-mix-grey);
+@gray:            mix( @syntax-mix-base, hsl(0,0%,54%), @syntax-mix-grey);
+@dark-red:        mix( @syntax-mix-base, #BE4F44, @syntax-mix-color);
+@orange:          mix( @syntax-mix-base, #D29B67, @syntax-mix-color);
+
+atom-text-editor.editor {
+  .syntax--invalid {
+    color: @dark-red;
+  }
+
+  .syntax--meta.syntax--structure.syntax--dictionary.syntax--json:not(.syntax--value) > .syntax--string.syntax--quoted.syntax--double.syntax--json {
+    color: @gray;
+  }
+
+  .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json {
+    color: @orange;
+  }
+
+  .syntax--punctuation {
+    color: @light-gray;
+  }
+}
