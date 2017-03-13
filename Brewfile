@@ -91,3 +91,4 @@ cask 'quicklookase'
 cask 'suspicious-package'
 cask 'webpquicklook'
 
+cask 'tunnelblick'
