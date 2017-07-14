@@ -1,5 +1,32 @@
 # Change Log
 
+## [v1.6.0](https://github.com/AtomLinter/linter-elixirc/tree/v1.6.0) (2017-05-05)
+[Full Changelog](https://github.com/AtomLinter/linter-elixirc/compare/v1.5.0...v1.6.0)
+
+**Implemented enhancements:**
+
+- Expand and tidy the README [\#89](https://github.com/AtomLinter/linter-elixirc/pull/89) ([mauricerkellu](https://github.com/mauricerkelly))
+
+**Fixed bugs:**
+
+- Fix absolute vs relative path issues [\#92](https://github.com/AtomLinter/linter-elixirc/pull/92) ([mauricerkellu](https://github.com/mauricerkelly))
+- Await the result of isUmbrellaProject() [\#91](https://github.com/AtomLinter/linter-elixirc/pull/91) ([mauricerkelly](https://github.com/mauricerkelly))
+
+## [v1.5.0](https://github.com/AtomLinter/linter-elixirc/tree/v1.5.0) (2017-04-17)
+[Full Changelog](https://github.com/AtomLinter/linter-elixirc/compare/v1.4.0...v1.5.0)
+
+**Implemented enhancements:**
+
+- Update atom-linter to the latest version 🚀 [\#87](https://github.com/AtomLinter/linter-elixirc/pull/87) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Account for umbrella projects when determining project path [\#86](https://github.com/AtomLinter/linter-elixirc/pull/86) ([mauricerkelly](https://github.com/mauricerkelly))
+
+## [v1.4.0](https://github.com/AtomLinter/linter-elixirc/tree/v1.4.0) (2017-03-22)
+[Full Changelog](https://github.com/AtomLinter/linter-elixirc/compare/v1.3.0...v1.4.0)
+
+**Implemented enhancements:**
+
+- Update to use Linter v2 provider and message formats [\#85](https://github.com/AtomLinter/linter-elixirc/pull/85) ([mauricerkelly](https://github.com/mauricerkelly))
+
 ## [v1.3.0](https://github.com/AtomLinter/linter-elixirc/tree/v1.3.0) (2017-03-02)
 [Full Changelog](https://github.com/AtomLinter/linter-elixirc/compare/v1.2.0...v1.3.0)
 

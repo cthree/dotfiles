@@ -3,7 +3,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies, import/extensions
 import { CompositeDisposable, Range } from 'atom';
 import { find, generateRange, exec } from 'atom-linter';
-import { dirname, join, relative, sep } from 'path';
+import { dirname, join, relative, sep, isAbsolute } from 'path';
 import { existsSync, readFileSync, readdirSync } from 'fs';
 
 const tmp = require('tmp');
@@ -31,6 +31,19 @@ const findElixirProjectPath = async (editorPath) => {
   const editorDir = dirname(editorPath);
   const mixexsPath = find(editorDir, 'mix.exs');
   if (mixexsPath !== null) {
+    const pathArray = mixexsPath.split(sep);
+    if (pathArray.length > 3 && pathArray[pathArray.length - 3] === 'apps') {
+      //  Treat this as an umbrella app. This may be wrong -
+      //  If you happen to keep your code in a directory called 'apps'
+      pathArray.splice((pathArray.length - 3), 3);
+      const umbrellaProjectPath = pathArray.join(sep);
+
+      //  Safety check by looking for a `mix.exs` file in the same directory as
+      //  'apps'. If it exists, then it's likely an umbrella project
+      if (existsSync(join(umbrellaProjectPath, 'mix.exs'))) {
+        return umbrellaProjectPath;
+      }
+    }
     return dirname(mixexsPath);
   }
   const projPath = atom.project.relativizePath(editorPath)[0];
@@ -55,10 +68,21 @@ const isMixProject = async (filePath) => {
   return existsSync(join(project, 'mix.exs'));
 };
 
+const isUmbrellaProject = async (filePath) => {
+  const project = await elixirProjectPath(filePath);
+  return existsSync(join(project, 'apps'));
+};
+
 const isTestFile = async (filePath) => {
+  const umbrellaProject = await isUmbrellaProject(filePath);
   const project = await elixirProjectPath(filePath);
   const relativePath = relative(project, filePath);
-  // Is the first directory of the relative path "test"?
+
+  if (umbrellaProject) {
+    // Is the structure "apps/app_name/test/..."
+    return relativePath.split(sep)[2] === 'test';
+  }
+  // Is the structure "test/..."
   return relativePath.split(sep)[0] === 'test';
 };
 
@@ -87,6 +111,13 @@ const findTextEditor = (filePath) => {
   return false;
 };
 
+const ensureAbsolutePath = (projectPath, filePath) => {
+  if (isAbsolute(filePath)) {
+    return filePath;
+  }
+  return join(projectPath, filePath);
+};
+
 const parseError = async (toParse, sourceFilePath) => {
   const messages = [];
   const re = regexp(
@@ -109,12 +140,12 @@ const parseError = async (toParse, sourceFilePath) => {
   const projectPath = await elixirProjectPath(sourceFilePath);
   let reResult = re.exec(toParse);
   while (reResult !== null) {
-    let text;
+    let excerpt;
     let filePath;
     let range;
     if (reResult[2] !== undefined) {
-      text = `(${reResult[1]}) ${reResult[2]}`;
-      filePath = join(projectPath, reResult[3]);
+      excerpt = `(${reResult[1]}) ${reResult[2]}`;
+      filePath = ensureAbsolutePath(projectPath, reResult[3]);
       const fileEditor = findTextEditor(filePath);
       if (fileEditor) {
         // If there is an open TextEditor instance for the file from the Error,
@@ -126,8 +157,8 @@ const parseError = async (toParse, sourceFilePath) => {
         range = new Range([reResult[4] - 1, 0], [reResult[4] - 1, 1]);
       }
     } else {
-      text = `(${reResult[1]}) ${reResult[7]}`;
-      filePath = join(projectPath, reResult[5]);
+      excerpt = `(${reResult[1]}) ${reResult[7]}`;
+      filePath = ensureAbsolutePath(projectPath, reResult[5]);
       const fileEditor = findTextEditor(filePath);
       if (fileEditor) {
         range = generateRange(fileEditor, reResult[6] - 1);
@@ -136,10 +167,9 @@ const parseError = async (toParse, sourceFilePath) => {
       }
     }
     messages.push({
-      type: 'Error',
-      text,
-      filePath,
-      range,
+      severity: 'error',
+      excerpt,
+      location: { file: filePath, position: range },
     });
     reResult = re.exec(toParse);
   }
@@ -160,7 +190,7 @@ const parseWarning = async (toParse, sourceFilePath) => {
   let reResult = re.exec(toParse);
 
   while (reResult != null) {
-    const filePath = join(projectPath, reResult[2]);
+    const filePath = ensureAbsolutePath(projectPath, reResult[2]);
     try {
       let range;
       const fileEditor = findTextEditor(filePath);
@@ -170,10 +200,9 @@ const parseWarning = async (toParse, sourceFilePath) => {
         range = new Range([reResult[3] - 1, 0], [reResult[3] - 1, 1]);
       }
       messages.push({
-        type: 'Warning',
-        text: reResult[1],
-        filePath,
-        range,
+        severity: 'warning',
+        excerpt: reResult[1],
+        location: { file: filePath, position: range },
       });
     } catch (Error) {
       // eslint-disable-next-line no-console
@@ -199,7 +228,7 @@ const parseLegacyWarning = async (toParse, sourceFilePath) => {
   const projectPath = await elixirProjectPath(sourceFilePath);
   let reResult = re.exec(toParse);
   while (reResult !== null) {
-    const filePath = join(projectPath, reResult[1]);
+    const filePath = ensureAbsolutePath(projectPath, reResult[1]);
     try {
       let range;
       const fileEditor = findTextEditor(filePath);
@@ -209,10 +238,9 @@ const parseLegacyWarning = async (toParse, sourceFilePath) => {
         range = new Range([reResult[3] - 1, 0], [reResult[3] - 1, 1]);
       }
       messages.push({
-        type: 'Warning',
-        text: reResult[3],
-        filePath,
-        range,
+        severity: 'warning',
+        excerpt: reResult[3],
+        location: { file: filePath, position: range },
       });
     } catch (Error) {
       // eslint-disable-next-line no-console
@@ -241,7 +269,7 @@ const handleResult = async (compileResult, filePath) => {
 
 const getOpts = async filePath => ({
   cwd: await elixirProjectPath(filePath),
-  throwOnStdErr: false,
+  throwOnStderr: false,
   stream: 'both',
   allowEmptyStderr: true,
   env: { MIX_ENV: mixEnv },
@@ -339,7 +367,7 @@ export default {
     return {
       grammarScopes: ['source.elixir'],
       scope: 'project',
-      lintOnFly: false,
+      lintsOnChange: false,
       name: 'Elixir',
       async lint(textEditor) {
         const filePath = textEditor.getPath();

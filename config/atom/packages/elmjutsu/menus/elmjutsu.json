@@ -1,0 +1,111 @@
+{
+  "context-menu": {
+    "atom-text-editor:not([mini])[data-grammar^=\"source elm\"": [
+        {
+          "label": "Elmjutsu",
+          "submenu": [
+          {
+            "label": "Go To Definition",
+            "command": "elmjutsu:go-to-definition"
+          },
+          {
+            "label": "Go To Symbol",
+            "command": "elmjutsu:go-to-symbol"
+          },
+          {
+            "label": "Find Usages",
+            "command": "elmjutsu:find-usages"
+          },
+          {
+            "label": "Go To Next Usage",
+            "command": "elmjutsu:go-to-next-usage"
+          },
+          {
+            "label": "Go To Previous Usage",
+            "command": "elmjutsu:go-to-previous-usage"
+          },
+          {
+            "label": "Go Back",
+            "command": "elmjutsu:go-back"
+          },
+          {
+            "label": "Rename Symbol",
+            "command": "elmjutsu:rename-symbol"
+          },
+          {
+            "label": "Add Import",
+            "command": "elmjutsu:add-import"
+          },
+          {
+            "label": "Toggle Sidekick",
+            "command": "elmjutsu:toggle-sidekick"
+          },
+          {
+            "label": "Install Package",
+            "command": "elmjutsu:install-package"
+          },
+          {
+            "label": "Uninstall Package",
+            "command": "elmjutsu:uninstall-package"
+          }
+        ]
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Elmjutsu",
+          "submenu": [
+            {
+              "label": "Go To Definition",
+              "command": "elmjutsu:go-to-definition"
+            },
+            {
+              "label": "Go To Symbol",
+              "command": "elmjutsu:go-to-symbol"
+            },
+            {
+              "label": "Find Usages",
+              "command": "elmjutsu:find-usages"
+            },
+            {
+              "label": "Go To Next Usage",
+              "command": "elmjutsu:go-to-next-usage"
+            },
+            {
+              "label": "Go To Previous Usage",
+              "command": "elmjutsu:go-to-previous-usage"
+            },
+            {
+              "label": "Go Back",
+              "command": "elmjutsu:go-back"
+            },
+            {
+              "label": "Rename Symbol",
+              "command": "elmjutsu:rename-symbol"
+            },
+            {
+              "label": "Add Import",
+              "command": "elmjutsu:add-import"
+            },
+            {
+              "label": "Toggle Sidekick",
+              "command": "elmjutsu:toggle-sidekick"
+            },
+            {
+              "label": "Install Package",
+              "command": "elmjutsu:install-package"
+            },
+            {
+              "label": "Uninstall Package",
+              "command": "elmjutsu:uninstall-package"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

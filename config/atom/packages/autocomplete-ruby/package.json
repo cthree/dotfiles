@@ -1,0 +1,256 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117417-3358-1ipovi7.ryb7r5dn29/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117417-3358-1ipovi7.ryb7r5dn29/package.tgz",
+        "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117417-3358-1ipovi7.ryb7r5dn29/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-117417-3358-13myep9.hm6wm6lxr"
+    ]
+  ],
+  "_from": "../d-117417-3358-1ipovi7.ryb7r5dn29/package.tgz",
+  "_id": "autocomplete-ruby@0.2.8",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/autocomplete-ruby",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117417-3358-1ipovi7.ryb7r5dn29/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117417-3358-1ipovi7.ryb7r5dn29/package.tgz",
+    "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117417-3358-1ipovi7.ryb7r5dn29/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-117417-3358-1ipovi7.ryb7r5dn29/package.tgz",
+  "_shasum": "5ff05a68792443feebbe059f3fd6fa31431d2f52",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117417-3358-1ipovi7.ryb7r5dn29/package.tgz",
+  "_where": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-117417-3358-13myep9.hm6wm6lxr",
+  "author": {
+    "name": "Ian Hattendorf",
+    "email": "ianhattendorf@gmail.com",
+    "url": "http://ianhattendorf.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ianhattendorf/autocomplete-ruby/issues"
+  },
+  "dependencies": {
+    "jquery": "^3",
+    "table-parser": "^0.1.3"
+  },
+  "description": "Intelligent Ruby code completion",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "homepage": "https://github.com/ianhattendorf/autocomplete-ruby",
+  "keywords": [
+    "autocomplete",
+    "autocomplete-plus",
+    "rsense",
+    "ruby"
+  ],
+  "license": "MIT",
+  "main": "./lib/autocomplete-ruby",
+  "name": "autocomplete-ruby",
+  "optionalDependencies": {},
+  "providedServices": {
+    "autocomplete.provider": {
+      "description": "Intelligent Ruby code completion",
+      "versions": {
+        "2.0.0": "provideAutocompletion"
+      }
+    }
+  },
+  "readme": "# Atom Autocomplete+ Ruby Suggestions\n[![Dependency status](https://david-dm.org/ianhattendorf/autocomplete-ruby.svg)](https://david-dm.org/ianhattendorf/autocomplete-ruby)\n[![GitHub version](https://badge.fury.io/gh/ianhattendorf%2Fautocomplete-ruby.svg)](http://badge.fury.io/gh/ianhattendorf%2Fautocomplete-ruby)\n\nProvides intelligent code completion for Ruby. Requires [RSense](https://github.com/rsense/rsense) and [Autocomplete+](https://github.com/atom-community/autocomplete-plus).\n\n## Status\nWorks for the most part, however **not on Windows**. This is due to a bug in [RSense](https://github.com/rsense/rsense), which is no longer being developed. Any bugs/issues related to rsense itself will need to be reported in that repo, and probably won't be fixed.\n\nPlease read the [Known Issues](#known-issues) before reporting any issues.\n\n## Why?\nBecause I wanted Ruby code completion in Atom and [atom-rsense](https://github.com/rsense/atom-rsense) is broken and hasn't been updated since June 2014.\n\n## Installation\nMake sure you have Java installed on your machine.\n\nInstall rsense:\n```shell\n$ gem install rsense\n```\n\nIf you get an error about not being able to find `rsense` after opening a ruby file, you will need to set the path to the rsense binary in the plugin settings. The path is different depending on which OS/Ruby environment manager you are using. Executing `which rsense` or `gem environment` might help you locate it.\n\n## Usage\nJust type some stuff, and autocomplete+ will automatically show you some suggestions.\n\nNote: If you use Winows, it might take about 10 seconds after the first suggestions pop up before rsense will give you any suggestions.\n\n## Known Issues\n- Sometimes the environment isn't configured correctly when launching Atom from it's launcher (any custom config in `.bashrc`, `.bash_profile`, etc.). If you have any issues with the plugin, please try launching atom from the terminal first: `$ atom`.\n- RSense doesn't appear to work on Windows.\n\nFeel free to report any other issues you encounter.\n\n## Development\nClone the repository into your working directory:\n```shell\n$ git clone git@github.com:ianhattendorf/autocomplete-ruby.git\n```\n\nInstall dependencies:\n```shell\n$ cd autocomplete-ruby\n$ apm install\n```\n\nLink to Atom as a dev package:\n```shell\n$ apm link --dev\n```\n\nFeel free to fork it and submit a pull request for any changes you make.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianhattendorf/autocomplete-ruby.git"
+  },
+  "version": "0.2.8",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "connected-domain",
+        "version": "1.0.0",
+        "path": "node_modules/connected-domain/index.js"
+      },
+      {
+        "name": "jquery",
+        "version": "3.2.1",
+        "path": "node_modules/jquery/dist/jquery.js"
+      },
+      {
+        "name": "table-parser",
+        "version": "0.1.3",
+        "path": "node_modules/table-parser/index.js"
+      }
+    ],
+    "extensions": {
+      ".coffee": [
+        "lib/autocomplete-ruby-client.coffee",
+        "lib/autocomplete-ruby-provider.coffee",
+        "lib/autocomplete-ruby.coffee",
+        "lib/gem-home.coffee"
+      ],
+      ".js": [
+        "node_modules/connected-domain/index.js",
+        "node_modules/connected-domain/lib/connected-domain.js",
+        "node_modules/jquery/dist/core.js",
+        "node_modules/jquery/dist/jquery.js",
+        "node_modules/jquery/dist/jquery.min.js",
+        "node_modules/jquery/dist/jquery.slim.js",
+        "node_modules/jquery/dist/jquery.slim.min.js",
+        "node_modules/jquery/external/sizzle/dist/sizzle.js",
+        "node_modules/jquery/external/sizzle/dist/sizzle.min.js",
+        "node_modules/jquery/src/ajax/jsonp.js",
+        "node_modules/jquery/src/ajax/load.js",
+        "node_modules/jquery/src/ajax/parseXML.js",
+        "node_modules/jquery/src/ajax/script.js",
+        "node_modules/jquery/src/ajax/var/location.js",
+        "node_modules/jquery/src/ajax/var/nonce.js",
+        "node_modules/jquery/src/ajax/var/rquery.js",
+        "node_modules/jquery/src/ajax/xhr.js",
+        "node_modules/jquery/src/ajax.js",
+        "node_modules/jquery/src/attributes/attr.js",
+        "node_modules/jquery/src/attributes/classes.js",
+        "node_modules/jquery/src/attributes/prop.js",
+        "node_modules/jquery/src/attributes/support.js",
+        "node_modules/jquery/src/attributes/val.js",
+        "node_modules/jquery/src/attributes.js",
+        "node_modules/jquery/src/callbacks.js",
+        "node_modules/jquery/src/core/DOMEval.js",
+        "node_modules/jquery/src/core/access.js",
+        "node_modules/jquery/src/core/init.js",
+        "node_modules/jquery/src/core/nodeName.js",
+        "node_modules/jquery/src/core/parseHTML.js",
+        "node_modules/jquery/src/core/ready-no-deferred.js",
+        "node_modules/jquery/src/core/ready.js",
+        "node_modules/jquery/src/core/readyException.js",
+        "node_modules/jquery/src/core/stripAndCollapse.js",
+        "node_modules/jquery/src/core/support.js",
+        "node_modules/jquery/src/core/var/rsingleTag.js",
+        "node_modules/jquery/src/core.js",
+        "node_modules/jquery/src/css/addGetHookIf.js",
+        "node_modules/jquery/src/css/adjustCSS.js",
+        "node_modules/jquery/src/css/curCSS.js",
+        "node_modules/jquery/src/css/hiddenVisibleSelectors.js",
+        "node_modules/jquery/src/css/showHide.js",
+        "node_modules/jquery/src/css/support.js",
+        "node_modules/jquery/src/css/var/cssExpand.js",
+        "node_modules/jquery/src/css/var/getStyles.js",
+        "node_modules/jquery/src/css/var/isHiddenWithinTree.js",
+        "node_modules/jquery/src/css/var/rmargin.js",
+        "node_modules/jquery/src/css/var/rnumnonpx.js",
+        "node_modules/jquery/src/css/var/swap.js",
+        "node_modules/jquery/src/css.js",
+        "node_modules/jquery/src/data/Data.js",
+        "node_modules/jquery/src/data/var/acceptData.js",
+        "node_modules/jquery/src/data/var/dataPriv.js",
+        "node_modules/jquery/src/data/var/dataUser.js",
+        "node_modules/jquery/src/data.js",
+        "node_modules/jquery/src/deferred/exceptionHook.js",
+        "node_modules/jquery/src/deferred.js",
+        "node_modules/jquery/src/deprecated.js",
+        "node_modules/jquery/src/dimensions.js",
+        "node_modules/jquery/src/effects/Tween.js",
+        "node_modules/jquery/src/effects/animatedSelector.js",
+        "node_modules/jquery/src/effects.js",
+        "node_modules/jquery/src/event/ajax.js",
+        "node_modules/jquery/src/event/alias.js",
+        "node_modules/jquery/src/event/focusin.js",
+        "node_modules/jquery/src/event/support.js",
+        "node_modules/jquery/src/event/trigger.js",
+        "node_modules/jquery/src/event.js",
+        "node_modules/jquery/src/exports/amd.js",
+        "node_modules/jquery/src/exports/global.js",
+        "node_modules/jquery/src/jquery.js",
+        "node_modules/jquery/src/manipulation/_evalUrl.js",
+        "node_modules/jquery/src/manipulation/buildFragment.js",
+        "node_modules/jquery/src/manipulation/getAll.js",
+        "node_modules/jquery/src/manipulation/setGlobalEval.js",
+        "node_modules/jquery/src/manipulation/support.js",
+        "node_modules/jquery/src/manipulation/var/rcheckableType.js",
+        "node_modules/jquery/src/manipulation/var/rscriptType.js",
+        "node_modules/jquery/src/manipulation/var/rtagName.js",
+        "node_modules/jquery/src/manipulation/wrapMap.js",
+        "node_modules/jquery/src/manipulation.js",
+        "node_modules/jquery/src/offset.js",
+        "node_modules/jquery/src/queue/delay.js",
+        "node_modules/jquery/src/queue.js",
+        "node_modules/jquery/src/selector-native.js",
+        "node_modules/jquery/src/selector-sizzle.js",
+        "node_modules/jquery/src/selector.js",
+        "node_modules/jquery/src/serialize.js",
+        "node_modules/jquery/src/traversing/findFilter.js",
+        "node_modules/jquery/src/traversing/var/dir.js",
+        "node_modules/jquery/src/traversing/var/rneedsContext.js",
+        "node_modules/jquery/src/traversing/var/siblings.js",
+        "node_modules/jquery/src/traversing.js",
+        "node_modules/jquery/src/var/ObjectFunctionString.js",
+        "node_modules/jquery/src/var/arr.js",
+        "node_modules/jquery/src/var/class2type.js",
+        "node_modules/jquery/src/var/concat.js",
+        "node_modules/jquery/src/var/document.js",
+        "node_modules/jquery/src/var/documentElement.js",
+        "node_modules/jquery/src/var/fnToString.js",
+        "node_modules/jquery/src/var/getProto.js",
+        "node_modules/jquery/src/var/hasOwn.js",
+        "node_modules/jquery/src/var/indexOf.js",
+        "node_modules/jquery/src/var/pnum.js",
+        "node_modules/jquery/src/var/push.js",
+        "node_modules/jquery/src/var/rcssNum.js",
+        "node_modules/jquery/src/var/rnothtmlwhite.js",
+        "node_modules/jquery/src/var/slice.js",
+        "node_modules/jquery/src/var/support.js",
+        "node_modules/jquery/src/var/toString.js",
+        "node_modules/jquery/src/wrap.js",
+        "node_modules/table-parser/index.js",
+        "node_modules/table-parser/lib/index.js"
+      ],
+      ".json": [
+        "node_modules/connected-domain/package.json",
+        "node_modules/jquery/bower.json",
+        "node_modules/jquery/package.json",
+        "node_modules/jquery/src/.eslintrc.json",
+        "node_modules/table-parser/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          "",
+          "spec"
+        ],
+        "dependencies": {
+          "jquery": "^3",
+          "table-parser": "^0.1.3"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/table-parser",
+          "node_modules/table-parser/lib",
+          "node_modules/table-parser/test"
+        ],
+        "dependencies": {
+          "connected-domain": "^1.0.0"
+        }
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 {
   "info": {
-    "version": "1.0.7",
-    "updated": "2017-03-11T20:26:51.201Z"
+    "version": "1.0.12",
+    "updated": "2017-03-26T17:18:22.860Z"
   },
   "root": [
     {
@@ -35,6 +35,28 @@
       "config": {},
       "paths": [
         "/Users/erik/Projects/blinky"
+      ]
+    },
+    {
+      "type": "project",
+      "name": "elixir_lcd",
+      "icon": "icon-light-bulb",
+      "color": "#2ba84a",
+      "devMode": false,
+      "config": {},
+      "paths": [
+        "/Users/erik/Projects/elixir_lcd"
+      ]
+    },
+    {
+      "type": "project",
+      "name": "ex_lcd_examples",
+      "icon": "icon-beaker",
+      "color": "#ff808f",
+      "devMode": false,
+      "config": {},
+      "paths": [
+        "/Users/erik/Projects/ex_lcd_examples"
       ]
     }
   ]

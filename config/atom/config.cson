@@ -1,36 +1,54 @@
 "*":
+  "atom-package-deps":
+    ignored: []
   "autocomplete-elixir":
     elixirPath: "/usr/local/bin"
     erlangHome: "/usr/local/bin"
   core:
+    closeDeletedFileTabs: true
     disabledPackages: [
       "welcome"
-      "linter-elixir-credo"
-      "wrap-guide"
       "package-generator"
       "background-tips"
+      "auto-replace-in-selection"
+      "autocomplete-ruby"
     ]
     projectHome: "/Users/erik/Projects"
     themes: [
-      "solarized-dark-ui"
-      "solarized-dark-syntax"
+      "solarized-light-ui"
+      "solarized-light-syntax"
     ]
   editor:
     fontFamily: "FiraCode"
     lineHeight: 1.4
     scrollPastEnd: true
-    showIndentGuide: true
     softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 2
     tabType: "soft"
+  "elm-format":
+    binary: "/usr/local/bin/elm-format-0.18"
+  elmjutsu:
+    autocompleteEnabled: true
+    autocompleteFuzzyFilteringEnabled: true
+    autocompleteMaxSuggestions: 50
+    autocompleteSnippetsEnabled: true
+    cacheDirectory: "/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/elmjutsu7805uZ2TAsvygt3t"
+    globalAutocompleteEnabled: true
   "exception-reporting":
     userId: "4d047897-0624-4836-87eb-9f7499f4ae93"
   figlet: {}
   fonts:
-    fontFamily: "FiraCode"
+    fontFamily: "FiraCode Light"
+  "language-babel":
+    autoIndentJSX: true
+  "language-elm":
+    autocompleteEnabled: false
   linter: {}
-  "linter-elixirc":
-    mixEnv: "test"
+  "linter-elixirc": {}
+  "linter-eslint":
+    useGlobalEslint: true
+  "linter-ui-default":
+    panelHeight: 74
   "markdown-preview":
     breakOnSingleNewline: true
     useGitHubStyle: true
@@ -47,11 +65,13 @@
   "minimap-git-diff":
     useGutterDecoration: true
   "project-manager":
+    ignoreDirectories: "node_modules, vendor, _build"
     includeGitRepositories: true
+    savePathsRelativeToHome: true
   "project-viewer":
     autoHide: true
     disclaimer:
-      v109: false
+      v1012: false
     hideHeader: true
     statusBar: true
   tabs:
@@ -61,3 +81,18 @@
     hideIgnoredNames: true
     sortFoldersBeforeFiles: false
     squashDirectoryNames: true
+".elixir.source":
+  editor:
+    softWrap: true
+    softWrapAtPreferredLineLength: false
+".elixir.text":
+  editor:
+    softWrap: true
+    softWrapAtPreferredLineLength: false
+".elm.source":
+  editor:
+    autoIndentOnPaste: false
+    softWrap: false
+    softWrapAtPreferredLineLength: true
+    softWrapHangingIndent: 4
+    tabLength: 4

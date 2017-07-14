@@ -2,40 +2,40 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-83542-1iw5t6w/package.tgz",
+        "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117516-13589-uakfhy.e1g7mpwrk9/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-83542-1iw5t6w/package.tgz",
-        "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-83542-1iw5t6w/package.tgz",
+        "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117516-13589-uakfhy.e1g7mpwrk9/package.tgz",
+        "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117516-13589-uakfhy.e1g7mpwrk9/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-117126-83542-1kib7nq"
+      "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-117516-13589-uipofq.mry04wjyvi"
     ]
   ],
-  "_from": "../d-117126-83542-1iw5t6w/package.tgz",
-  "_id": "language-elixir@0.17.0",
+  "_from": "../d-117516-13589-uakfhy.e1g7mpwrk9/package.tgz",
+  "_id": "language-elixir@0.19.0",
   "_inCache": true,
   "_installable": true,
   "_location": "/language-elixir",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-83542-1iw5t6w/package.tgz",
+    "raw": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117516-13589-uakfhy.e1g7mpwrk9/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-83542-1iw5t6w/package.tgz",
-    "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-83542-1iw5t6w/package.tgz",
+    "rawSpec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117516-13589-uakfhy.e1g7mpwrk9/package.tgz",
+    "spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117516-13589-uakfhy.e1g7mpwrk9/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117126-83542-1iw5t6w/package.tgz",
-  "_shasum": "ba26e6c63546ee59703cb015f5f35dbe8e97ae02",
+  "_resolved": "file:../d-117516-13589-uakfhy.e1g7mpwrk9/package.tgz",
+  "_shasum": "5663c4ba4d04a7ac978024541711db0bb2e4b9f2",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117126-83542-1iw5t6w/package.tgz",
-  "_where": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-117126-83542-1kib7nq",
+  "_spec": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/d-117516-13589-uakfhy.e1g7mpwrk9/package.tgz",
+  "_where": "/private/var/folders/3w/mrsr222x5tz_gvhmgvsfqq9r0000gn/T/apm-install-dir-117516-13589-uipofq.mry04wjyvi",
   "bugs": {
     "url": "https://github.com/elixir-lang/language-elixir/issues"
   },
@@ -55,5 +55,15 @@
     "type": "git",
     "url": "git+https://github.com/elixir-lang/language-elixir.git"
   },
-  "version": "0.17.0"
+  "version": "0.19.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
 }

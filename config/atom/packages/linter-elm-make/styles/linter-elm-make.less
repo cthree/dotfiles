@@ -1,0 +1,169 @@
+@import "ui-variables";
+@import "octicon-mixins";
+
+.linter-elm-make {
+  .fix-type {
+    padding-right: @component-padding;
+    color: @text-color-info;
+  }
+}
+// Since `Intentions` does not allow specifying HTML, do a workaround here:
+.linter-elm-make-fix-intention {
+  .linter-elm-make.fix-type;
+  display: inline;
+  font-size: @font-size;
+  font-family: @font-family;
+}
+.linter-elm-make-fix--replace-with::before {
+  .linter-elm-make-fix-intention;
+  content: "Replace with:";
+}
+.linter-elm-make-fix--add-type-annotation::before {
+  .linter-elm-make-fix-intention;
+  content: "Add type annotation:";
+}
+.linter-elm-make-fix--remove-unused-import::before {
+  .linter-elm-make-fix-intention;
+  content: "Remove unused import:";
+}
+.linter-elm-make-fix--add-import::before {
+  .linter-elm-make-fix-intention;
+  content: "Add import:";
+}
+.linter-elm-make-fix--add-missing-patterns::before {
+  .linter-elm-make-fix-intention;
+  content: "Add missing patterns:";
+}
+.linter-elm-make-fix--fix-module-name::before {
+  .linter-elm-make-fix-intention;
+  content: "Fix module name:";
+}
+// .linter-elm-make-fix--remove-redundant-patterns::before {
+//   .linter-elm-make-fix-intention;
+//   content: "Remove redundant patterns:";
+// }
+.linter-elm-make.set-main-paths {
+  .notes {
+    padding: @component-padding;
+  }
+}
+.linter-elm-make-issue {
+  background: none;
+}
+.linter-elm-make-issue-selected {
+  .linter-elm-make-issue;
+  background-color: @background-color-highlight;
+  border-radius: @component-border-radius;
+}
+.linter-elm-make-inferred-type-annotation {
+  color: @text-color-subtle;
+  font-style: italic;
+}
+.linter-elm-make-problem-overview {
+  font-weight: bold;
+  border-bottom: 1px solid;
+}
+.linter-elm-make-details-emphasized {
+  font-weight: bold;
+}
+.linter-elm-make-details-info {
+  font-weight: bold;
+  color: @text-color-info;
+}
+.linter-elm-make-details-type,
+.linter-elm-make-details-name {
+  display: inline-block;
+  font-weight: bold;
+}
+.linter-elm-make-details-type {
+  padding-left: @component-padding * 3;
+}
+.linter-elm-make-details-expected-type {
+  .linter-elm-make-details-type;
+}
+.linter-elm-make-details-expected-name {
+  .linter-elm-make-details-name;
+}
+.linter-elm-make-details-actual-type {
+  .linter-elm-make-details-type;
+}
+.linter-elm-make-details-actual-name {
+  .linter-elm-make-details-name;
+}
+.linter-elm-make-expected-type-diff-changed,
+.linter-elm-make-expected-name-diff-changed {
+  border-bottom: 1px dotted fadeout(@text-color-success, 25%);
+  padding-bottom: 1px;
+  color: @text-color-success !important; // `!important` is needed to make this work in `Atom Material` UI theme.
+}
+.linter-elm-make-actual-type-diff-changed,
+.linter-elm-make-actual-name-diff-changed {
+  border-bottom: 1px dotted fadeout(@text-color-error, 25%);
+  padding-bottom: 1px;
+  color: @text-color-error !important; // `!important` is needed to make this work in `Atom Material` UI theme.
+}
+.linter-elm-make-details-hint {
+}
+.linter-elm-make-details-hint-label {
+  .octicon(info);
+  color: @text-color-info;
+  font-weight: bold;
+}
+.linter-elm-make-quick-fixes-tooltip.tooltip {
+  .tooltip-inner {
+    .octicon(light-bulb);
+    padding: 4px !important;
+    margin: 4px !important;
+    background-color: @base-background-color !important;
+    color: @text-color-info !important;
+    font-weight: bold;
+    border: 1px solid @text-color;
+  }
+  .tooltip-arrow {
+    border: none;
+  }
+}
+.linter-elm-make-quick-fixes-status {
+  .octicon(light-bulb);
+  color: @text-color-info;
+}
+.linter-elm-make-tooltip {
+  background-color: fadeout(@base-background-color, 15%) !important;
+  border: 2px solid fadeout(@text-color, 15%) !important;
+  // Arrow pointer
+  &::before {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: fadeout(@text-color, 15%);
+    border-left-color: fadeout(@text-color, 15%);
+  }
+}
+.linter-elm-make-tooltip-link {
+  color: @text-color-subtle !important;
+  text-decoration: underline;
+  // .octicon(link-external);
+}
+// Make inline tooltip look like the linter panel.
+atom-text-editor:not([mini])[data-grammar="source elm"] {
+  #linter-tooltip linter-message {
+    .linter-elm-make-tooltip;
+    color: @text-color;
+    a {
+      .linter-elm-make-tooltip-link;
+    }
+  }
+  #linter-inline {
+    .linter-elm-make-tooltip;
+    linter-message {
+      font-size: 90%;
+      span:last-child {
+        color: @text-color;
+      }
+      linter-message-line {
+        a {
+          .linter-elm-make-tooltip-link;
+        }
+      }
+    }
+  }
+}

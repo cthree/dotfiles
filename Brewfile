@@ -92,3 +92,4 @@ cask 'suspicious-package'
 cask 'webpquicklook'
 
 cask 'tunnelblick'
+brew 'phantomjs'

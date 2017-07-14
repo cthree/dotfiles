@@ -1,0 +1,9 @@
+.DS_Store
+npm-debug.log
+node_modules
+elm/linter-elm-make.json
+elm/elm-stuff
+tests/elm-stuff
+**/Repl.elmi
+**/Repl.elmo
+!.gitignore

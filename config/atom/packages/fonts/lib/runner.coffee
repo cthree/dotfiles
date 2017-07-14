@@ -6,19 +6,25 @@ module.exports =
       atom.workspace.increaseFontSize()
       atom.workspace.decreaseFontSize()
 
-    applyFont = (font) ->
-      body.setAttribute('fonts-editor-font', font)
+    applyFont = () ->
+      font =
+        "'" +
+        atom.config.get('fonts.fontFamily') +
+        "', " +
+        atom.config.get('fonts.secondaryFonts')
+
+      body.setAttribute('style', '--fonts-package-editorfont: ' + font + ';')
       triggerMeasurements()
 
     # apply fonts when atom is ready
-    applyFont(
-      atom.config.get('fonts.fontFamily')
-    )
+    applyFont()
 
     # apply fonts when config changes
     # after config changes measurements are already triggered by atom
     @observer = atom.config.observe 'fonts.fontFamily', ->
-      applyFont(atom.config.get('fonts.fontFamily'))
+      applyFont()
+    @observer = atom.config.observe 'fonts.secondaryFonts', ->
+      applyFont()
 
     # give chromium some time to load the fonts
     # then trigger measurements
@@ -26,7 +32,7 @@ module.exports =
       triggerMeasurements()
     ), 500
 
-    unless document.getElementsByTagName('fonts-fixer')
+    if document.getElementsByTagName('fonts-fixer').length is 0
       # create a fixer element that forces chrome to load font styles
       # contains *r*egular, *b*old, *i*talic and i in b
       fixerProto = Object.create(HTMLElement::)
