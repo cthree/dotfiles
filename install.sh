@@ -18,7 +18,7 @@ if [ SYSTYPE = "Linux" ] ; then
     sudo add-apt-repository ppa:neovim-ppa/stable -y
     sudo apt-get update
     sudo apt-get install neovim -y
-    
+
     # Install pythons
     sudo apt-get install python-dev python-pip python3-dev python3-pip -y
     sudo apt-get install python3-setuptools -y
@@ -66,7 +66,4 @@ ln -s $DOTFILES/config/nvim ~/.config/nvim
 # Install the vim plugins and exit
 nvim -c PlugInstall -c q -c q
 
-ln -s ~/.config/atom ~/.atom
-
 echo "All done!"
-
