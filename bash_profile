@@ -82,11 +82,6 @@ fi
 
 # some git command shortcuts
 alias gst="git status"
-alias gls="git status --short"
-alias gci="git commit -v -m"
-alias gco="git checkout"
-alias gbr="git branch --color"
-alias gadd="git add"
 
 # Load other account specific aliases from another file
 if [ -f ~/.bash_aliases ]; then
@@ -109,20 +104,8 @@ if command_exists rbenv; then
   eval "$(rbenv init -)"
 fi
 
-# Load the local-machine-specific bash_profile addendum last
-[[ -s "$HOME/.bash_profile.local" ]] && source "$HOME/.bash_profile.local"
-
-# Rust/Cargo Path and options
-export RUST_SRC_PATH="/Users/epetersen/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
-# export RUSTC_WRAPPER="sccache"
-
-# Enable iex history
+# Enable iex REPL command line history
 command_exists iex && export ERL_AFLAGS="-kernel shell_history enabled"
 
-
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# ESP32
-export ESP_ROOT="$HOME/esp"
-export PATH="$ESP_ROOT/xtensa-esp32-elf/bin:$PATH"
-export IDF_PATH="$ESP_ROOT/esp-idf"
+# Load the local-machine-specific bash_profile addendum last
+[[ -s "$HOME/.bash_profile.local" ]] && source "$HOME/.bash_profile.local"
