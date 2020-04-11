@@ -6,26 +6,26 @@ tap 'homebrew/services'
 tap 'neovim/neovim'
 
 # Mac App Store CLI and apps
-brew 'mas'
-mas 'Textual', id: 403012667 
-mas 'Slack', id: 803453959 
-mas 'Napkin', id: 581789185 
-mas 'Xcode', id: 497799835 
+#brew 'mas'
+#mas 'Textual', id: 403012667 
+#mas 'Slack', id: 803453959 
+#mas 'Napkin', id: 581789185 
+#mas 'Xcode', id: 497799835 
 
 # Other core apps not from App Store
-cask 'dropbox'
-cask '1password'
-cask 'docker'
+#cask 'dropbox'
+#cask '1password'
+#cask 'docker'
 cask 'caffeine'
-cask 'github-desktop'
-cask 'sketch'
-cask 'paintcode'
-cask 'google-chrome'
-cask 'firefox'
-cask 'alfred'
-cask 'pgadmin4'
-cask 'kitematic'
-cask 'jetbrains-toolbox'
+#cask 'github-desktop'
+#cask 'sketch'
+#cask 'paintcode'
+#cask 'google-chrome'
+#cask 'firefox'
+#cask 'alfred'
+#cask 'pgadmin4'
+#cask 'kitematic'
+#cask 'jetbrains-toolbox'
 
 brew 'autoconf'
 brew 'automake'
@@ -91,5 +91,4 @@ cask 'quicklookase'
 cask 'suspicious-package'
 cask 'webpquicklook'
 
-cask 'tunnelblick'
-brew 'phantomjs'
+#cask 'tunnelblick'

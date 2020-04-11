@@ -6,7 +6,7 @@ DOTFILES="$HOME/dotfiles"
 [[ -s "$DOTFILES/dotfiles.inc.sh" ]] && source "$DOTFILES/dotfiles.inc.sh"
 
 # Load .profile first (if there is one)
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" 
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
 # Set language to en_US with UTF-8 encoding to support filenames with non-ascii
 # characters
@@ -16,7 +16,7 @@ export LC_CTYPE=en_US.UTF-8
 export CLICOLOR=$HAS_COLOR
 if [[ $HAS_COLOR ]]; then
   if command_exists dircolors; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)" 
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   fi
 
   # BSD ls doesn't support --color= option so make sure ours does
@@ -65,7 +65,7 @@ export VISUAL=vim
 PROMPT="\[${CYN}\]\u\[${NRM}\]@\[${BLU}\]\h\[${NRM}\]:\W"
 PS1="${PROMPT} \$ "
 
-# Load git command completion 
+# Load git command completion
 [[ -s "$DOTFILES/git-completion.bash" ]] && source "$DOTFILES/git-completion.bash"
 
 # Configure git aware shell prompt
@@ -112,3 +112,17 @@ fi
 # Load the local-machine-specific bash_profile addendum last
 [[ -s "$HOME/.bash_profile.local" ]] && source "$HOME/.bash_profile.local"
 
+# Rust/Cargo Path and options
+export RUST_SRC_PATH="/Users/epetersen/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
+# export RUSTC_WRAPPER="sccache"
+
+# Enable iex history
+command_exists iex && export ERL_AFLAGS="-kernel shell_history enabled"
+
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# ESP32
+export ESP_ROOT="$HOME/esp"
+export PATH="$ESP_ROOT/xtensa-esp32-elf/bin:$PATH"
+export IDF_PATH="$ESP_ROOT/esp-idf"
