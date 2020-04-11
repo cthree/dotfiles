@@ -66,4 +66,6 @@ ln -s $DOTFILES/config/nvim ~/.config/nvim
 # Install the vim plugins and exit
 nvim -c PlugInstall -c q -c q
 
+touch $HOME/.bash_profile.local
+
 echo "All done!"
