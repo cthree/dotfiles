@@ -49,8 +49,13 @@ fi
 # minor spellcheck on directory names for cd
 shopt -s cdspell
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # local binaries path
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export MANPATH=/usr/local/man:$MANPATH
 
 # use neovim if it is installed
